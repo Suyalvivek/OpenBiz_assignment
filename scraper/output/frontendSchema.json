@@ -1,0 +1,79 @@
+{
+  "step1Fields": [
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtadharno",
+      "label": "Aadhaar Number",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 12,
+      "placeholder": "Your Aadhaar No",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtownername",
+      "label": "Name of Entrepreneur",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 100,
+      "placeholder": "Name as per Aadhaar",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$chkDecarationA",
+      "label": "Declaration/Agreement",
+      "type": "checkbox",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    }
+  ],
+  "step2Fields": [
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtadharno",
+      "label": "Aadhaar Number",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 12,
+      "placeholder": "Your Aadhaar No",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtownername",
+      "label": "Name of Entrepreneur",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 100,
+      "placeholder": "Name as per Aadhaar",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$chkDecarationA",
+      "label": "Declaration/Agreement",
+      "type": "checkbox",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    }
+  ],
+  "validationRules": {
+    "aadhaar": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$|^[2-9]{1}[0-9]{11}$",
+    "pan": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+    "mobile": "^[6-9]\\d{9}$",
+    "email": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    "pincode": "^[1-9][0-9]{5}$"
+  }
+}

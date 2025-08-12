@@ -1,0 +1,78 @@
+/* UdyamRegistrationForm.css */
+.udyam-registration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.udyam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.msme-logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+.ministry-text h3 {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #f0f0f0;
+}
+
+.form-title {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-title h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-container {
+  margin-top: 30px;
+}
+
+.udyam-footer {
+  margin-top: 40px;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
+}

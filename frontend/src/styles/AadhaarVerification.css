@@ -1,0 +1,152 @@
+/* AadhaarVerification.css */
+.aadhaar-verification-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.verification-header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.verification-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.aadhaar-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.label-container {
+  flex: 0 0 40%;
+  padding-right: 15px;
+}
+
+.input-container {
+  flex: 0 0 60%;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+.aadhaar-info {
+  background-color: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.aadhaar-info ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.aadhaar-info li {
+  margin-bottom: 8px;
+}
+
+.declaration-group {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-top: 4px;
+  margin-right: 10px;
+}
+
+.checkbox-container label {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.form-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0069d9;
+}
+
+.submit-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.error-alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.otp-verification {
+  padding: 20px;
+}
+
+.otp-verification h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.otp-verification p {
+  margin-bottom: 20px;
+  color: #495057;
+}

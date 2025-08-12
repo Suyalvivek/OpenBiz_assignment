@@ -1,0 +1,60 @@
+// Prisma schema for Udyam registration
+// Stores form metadata and user submissions
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model FormField {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  label       String
+  type        String
+  required    Boolean
+  pattern     String?  @db.VarChar(255)
+  validator   String?  @db.VarChar(255)
+  maxLength   Int?
+  placeholder String?  @db.VarChar(255)
+  step        Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ValidationRule {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  pattern   String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UdyamSubmission {
+  id            Int       @id @default(autoincrement())
+  // Step 1: Aadhaar Verification
+  aadhaar       String?   @db.VarChar(12)
+  name          String?   @db.VarChar(255)
+  declaration   Boolean?  @default(false)
+  otpVerified   Boolean?  @default(false)
+  otp           String?   @db.VarChar(6)
+  
+  // Step 2: PAN Verification
+  pan           String?   @db.VarChar(10)
+  panType       String?   @db.VarChar(50)  // e.g., 'Individual', 'Company', etc.
+  panVerified   Boolean?  @default(false)
+  
+  // Contact Information
+  mobile        String?   @db.VarChar(10)
+  email         String?   @db.VarChar(255)
+  
+  // Metadata
+  status        String    @default("DRAFT") // DRAFT, COMPLETED, VERIFIED
+  currentStep   Int       @default(1)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  completedAt   DateTime?
+}
