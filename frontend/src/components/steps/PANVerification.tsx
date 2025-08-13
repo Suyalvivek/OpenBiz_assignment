@@ -5,7 +5,7 @@ import { PANVerificationSchema } from '../../validations/schemas';
 import type { PANFormData } from '../../validations/formTypes';
 import { udyamService } from '../../api/udyamService';
 import '../../styles/PANVerification.css';
-import type { FormData } from '../../types';
+import type { FormData } from '../../types/types';
 
 interface PANVerificationProps {
   formData: FormData;

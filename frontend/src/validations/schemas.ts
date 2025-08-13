@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import type { FormData } from '../types';
 
 // Aadhaar Verification Schema
 export const AadhaarVerificationSchema = z.object({

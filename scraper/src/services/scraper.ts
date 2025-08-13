@@ -3,7 +3,7 @@
  */
 
 import puppeteer from 'puppeteer';
-import { ScrapedData, FormField } from '../types';
+import { ScrapedData, FormField } from '../types/type';
 import { config } from '../config';
 import { logger } from '../utils/logger';
 import { extractFormFields, extractUIElements, extractValidationRules } from './formExtractor';

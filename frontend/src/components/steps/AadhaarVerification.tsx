@@ -5,7 +5,7 @@ import { AadhaarVerificationSchema } from '../../validations/schemas';
 import type { AadhaarFormData } from '../../validations/formTypes';
 import { udyamService } from '../../api/udyamService';
 import '../../styles/AadhaarVerification.css';
-import type { FormData } from '../../types';
+import type { FormData } from '../../types/types';
 
 interface AadhaarVerificationProps {
   formData: FormData;

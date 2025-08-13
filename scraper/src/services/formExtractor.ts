@@ -3,7 +3,7 @@
  */
 
 import { Page } from 'puppeteer';
-import { FormField, UIElement, ValidationRules } from '../types';
+import { FormField, UIElement, ValidationRules } from '../types/type';
 
 /**
  * Extract form fields from the page

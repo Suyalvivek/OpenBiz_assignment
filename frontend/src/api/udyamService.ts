@@ -1,5 +1,5 @@
 // API service for Udyam Registration
-import type { ApiResponse } from '../types';
+import type { ApiResponse } from '../types/types';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 

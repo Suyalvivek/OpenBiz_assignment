@@ -4,7 +4,7 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { ScrapedData, FrontendSchema } from '../types';
+import { ScrapedData, FrontendSchema } from '../types/type';
 
 /**
  * Ensures the output directory exists

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import AadhaarVerification from './steps/AadhaarVerification';
 import PANVerification from './steps/PANVerification';
 import ProgressTracker from './common/ProgressTracker';
-import type { FormData } from '../types';
+import type { FormData } from '../types/types';
 import '../styles/UdyamRegistrationForm.css';
 
 const UdyamRegistrationForm = () => {
