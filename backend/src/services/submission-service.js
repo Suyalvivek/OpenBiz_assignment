@@ -113,12 +113,14 @@ export const processPANVerification = async (data) => {
     return { success: false, errors };
   }
 
-  // Update submission
+  // Update submission with new PAN fields
   const submission = await prisma.udyamSubmission.update({
     where: { id: parseInt(data.submissionId) },
     data: {
       pan: data.txtPAN,
-      panType: data.ddlPANType,
+      organisationType: data.ddlOrganisationType,
+      panHolderName: data.txtPANHolderName,
+      panDOB: data.txtDOB,
       panVerified: true,
       status: 'COMPLETED',
       completedAt: new Date()

@@ -1,5 +1,37 @@
 // Common types for the Udyam Registration application
 
+// Scraped form schema types
+export interface FormField {
+  name: string;
+  label: string;
+  type: string;
+  required: boolean;
+  pattern: string;
+  maxLength: number;
+  placeholder: string;
+  step: number;
+  validator: string;
+  options?: FieldOption[];
+}
+
+export interface FieldOption {
+  value: string;
+  label: string;
+}
+
+export interface FormSchema {
+  step1Fields: FormField[];
+  step2Fields: FormField[];
+}
+
+export interface ValidationRules {
+  aadhaar: string;
+  pan: string;
+  mobile: string;
+  email: string;
+  pincode: string;
+}
+
 // Form data types
 export interface FormData {
   // Step 1: Aadhaar Verification
@@ -10,7 +42,9 @@ export interface FormData {
   
   // Step 2: PAN Verification
   txtPAN?: string;
-  ddlPANType?: string;
+  ddlOrganisationType?: string;
+  txtPANHolderName?: string;
+  txtDOB?: string;
   
   // Submission data
   submissionId?: number | null;
@@ -29,8 +63,8 @@ export interface ApiResponse {
   status?: string;
 }
 
-// Form field types
-export interface FormField {
+// Dynamic form field types
+export interface DynamicFormField {
   id: number;
   name: string;
   label: string;
@@ -39,11 +73,6 @@ export interface FormField {
   step: number;
   options?: FieldOption[];
   validations?: FieldValidation[];
-}
-
-export interface FieldOption {
-  value: string;
-  label: string;
 }
 
 export interface FieldValidation {

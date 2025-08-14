@@ -121,3 +121,169 @@ select {
   border-radius: 4px;
   margin-bottom: 20px;
 }
+
+/* Success state styles */
+.success-container {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.success-icon {
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+.success-title {
+  color: #28a745;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.registration-summary {
+  text-align: left;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border: 1px solid #dee2e6;
+}
+
+.registration-summary h4 {
+  color: #495057;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 0.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item strong {
+  color: #495057;
+  min-width: 200px;
+}
+
+.next-steps {
+  text-align: left;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border: 1px solid #dee2e6;
+}
+
+.next-steps h4 {
+  color: #495057;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.next-steps ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.next-steps li {
+  margin: 0.5rem 0;
+  color: #6c757d;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.print-button,
+.new-registration-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.print-button {
+  background: #007bff;
+  color: white;
+}
+
+.print-button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.new-registration-button {
+  background: #28a745;
+  color: white;
+}
+
+.new-registration-button:hover {
+  background: #1e7e34;
+  transform: translateY(-2px);
+}
+
+/* Completion banner styles */
+.completion-banner {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.banner-icon {
+  font-size: 1.5rem;
+}
+
+.banner-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .success-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .print-button,
+  .new-registration-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .summary-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .summary-item strong {
+    min-width: auto;
+  }
+}

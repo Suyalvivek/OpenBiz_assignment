@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { AadhaarVerificationSchema } from '../../validations/schemas';
+import { createAadhaarVerificationSchema } from '../../validations/schemas';
 import type { AadhaarFormData } from '../../validations/formTypes';
 import { udyamService } from '../../api/udyamService';
+import { schemaService } from '../../api/schemaService';
+import DynamicFormField from '../common/DynamicFormField';
 import '../../styles/AadhaarVerification.css';
-import type { FormData } from '../../types/types';
+import type { FormData, FormField, ValidationRules } from '../../types/types';
 
 interface AadhaarVerificationProps {
   formData: FormData;
@@ -22,8 +24,19 @@ const AadhaarVerification = ({
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [step1Fields, setStep1Fields] = useState<FormField[]>([]);
+  const [validationRules, setValidationRules] = useState<ValidationRules | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const { register, handleSubmit, formState: { errors } } = useForm<AadhaarFormData>({
+  const AadhaarVerificationSchema = createAadhaarVerificationSchema(validationRules || undefined);
+
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors }, 
+    setValue, 
+    watch 
+  } = useForm<AadhaarFormData>({
     resolver: zodResolver(AadhaarVerificationSchema),
     defaultValues: {
       txtadharno: formData.txtadharno || '',
@@ -31,6 +44,91 @@ const AadhaarVerification = ({
       chkDecarationA: formData.chkDecarationA || false,
     },
   });
+
+  useEffect(() => {
+    const loadSchema = async () => {
+      try {
+        const [schema, rules] = await Promise.all([
+          schemaService.getFormSchema(),
+          schemaService.getValidationRules()
+        ]);
+        
+        setStep1Fields(schema.step1Fields);
+        setValidationRules(rules);
+        setDefaultFormValues(schema.step1Fields);
+      } catch (error) {
+        setFallbackFields();
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadSchema();
+  }, [formData, setValue]);
+
+  const setDefaultFormValues = (fields: FormField[]) => {
+    fields.forEach(field => {
+      const mappedFieldName = getMappedFieldName(field.name);
+      if (mappedFieldName && formData[mappedFieldName as keyof FormData]) {
+        setValue(mappedFieldName as keyof AadhaarFormData, formData[mappedFieldName as keyof FormData]);
+      }
+    });
+  };
+
+  const setFallbackFields = () => {
+    setStep1Fields([
+      {
+        name: "ctl00$ContentPlaceHolder1$txtadharno",
+        label: "Aadhaar Number",
+        type: "text",
+        required: true,
+        pattern: "",
+        maxLength: 12,
+        placeholder: "Your Aadhaar No",
+        step: 1,
+        validator: ""
+      },
+      {
+        name: "ctl00$ContentPlaceHolder1$txtownername",
+        label: "Name of Entrepreneur",
+        type: "text",
+        required: true,
+        pattern: "",
+        maxLength: 100,
+        placeholder: "Name as per Aadhaar",
+        step: 1,
+        validator: ""
+      },
+      {
+        name: "ctl00$ContentPlaceHolder1$chkDecarationA",
+        label: "Declaration/Agreement",
+        type: "checkbox",
+        required: false,
+        pattern: "",
+        maxLength: -1,
+        placeholder: "",
+        step: 1,
+        validator: ""
+      }
+    ]);
+  };
+
+  const fieldMapping: { [key: string]: string } = {
+    'ctl00$ContentPlaceHolder1$txtadharno': 'txtadharno',
+    'ctl00$ContentPlaceHolder1$txtownername': 'txtownername',
+    'ctl00$ContentPlaceHolder1$chkDecarationA': 'chkDecarationA'
+  };
+
+  const getMappedFieldName = (scrapedName: string): string | null => {
+    return fieldMapping[scrapedName] || null;
+  };
+
+  const handleFieldChange = (fieldName: string, value: unknown) => {
+    const mappedFieldName = getMappedFieldName(fieldName);
+    if (mappedFieldName) {
+      setValue(mappedFieldName as keyof AadhaarFormData, value);
+    }
+  };
 
   const handleAadhaarSubmit = async (data: AadhaarFormData) => {
     try {
@@ -46,7 +144,8 @@ const AadhaarVerification = ({
       setOtpSent(true);
       onComplete({ ...data, submissionId: result.submissionId });
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'An error occurred while submitting Aadhaar details');
+      const errorMessage = err instanceof Error ? err.message : 'An error occurred while submitting Aadhaar details';
+      setError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -65,11 +164,16 @@ const AadhaarVerification = ({
 
       onComplete({ otpVerified: true, nextStep: result.nextStep });
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'An error occurred while verifying OTP');
+      const errorMessage = err instanceof Error ? err.message : 'An error occurred while verifying OTP';
+      setError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  if (loading) {
+    return <div className="loading">Loading form...</div>;
+  }
 
   return (
     <div className="aadhaar-verification-container">
@@ -79,41 +183,18 @@ const AadhaarVerification = ({
 
       {!otpSent ? (
         <form onSubmit={handleSubmit(handleAadhaarSubmit)} className="aadhaar-form">
-          <div className="form-group">
-            <div className="form-row">
-              <div className="label-container">
-                <label htmlFor="txtadharno">1. Aadhaar Number/ आधार संख्या</label>
-              </div>
-              <div className="input-container">
-                <input
-                  type="text"
-                  id="txtadharno"
-                  placeholder="Your Aadhaar No"
-                  maxLength={12}
-                  {...register('txtadharno')}
-                />
-                {errors.txtadharno && <span className="error-message">{errors.txtadharno.message}</span>}
-              </div>
-            </div>
-          </div>
-
-          <div className="form-group">
-            <div className="form-row">
-              <div className="label-container">
-                <label htmlFor="txtownername">2. Name of Entrepreneur / उद्यमी का नाम</label>
-              </div>
-              <div className="input-container">
-                <input
-                  type="text"
-                  id="txtownername"
-                  placeholder="Name as per Aadhaar"
-                  maxLength={100}
-                  {...register('txtownername')}
-                />
-                {errors.txtownername && <span className="error-message">{errors.txtownername.message}</span>}
-              </div>
-            </div>
-          </div>
+          {step1Fields
+            .filter(field => field.type !== 'hidden' && field.type !== 'submit')
+            .map((field) => (
+              <DynamicFormField
+                key={field.name}
+                field={field}
+                value={watch(getMappedFieldName(field.name) as keyof AadhaarFormData)}
+                onChange={handleFieldChange}
+                error={errors[getMappedFieldName(field.name) as keyof AadhaarFormData]?.message}
+                register={register}
+              />
+            ))}
 
           <div className="aadhaar-info">
             <ul>
@@ -121,16 +202,6 @@ const AadhaarVerification = ({
               <li>The Aadhaar number shall be of the proprietor in the case of a proprietorship firm, of the managing partner in the case of a partnership firm and of a karta in the case of a Hindu Undivided Family (HUF).</li>
               <li>In case of a Company, LLP, Cooperative Society, Society, or Trust, the organisation or its authorised signatory shall provide its GSTIN (as per applicability of CGST Act 2017) and PAN along with its Aadhaar number.</li>
             </ul>
-          </div>
-
-          <div className="form-group declaration-group">
-            <div className="checkbox-container">
-              <input type="checkbox" id="chkDecarationA" {...register('chkDecarationA')} />
-              <label htmlFor="chkDecarationA">
-                I, the holder of the above Aadhaar, hereby give my consent to Ministry of MSME, Government of India...
-              </label>
-            </div>
-            {errors.chkDecarationA && <span className="error-message">{errors.chkDecarationA.message}</span>}
           </div>
 
           {error && <div className="error-alert">{error}</div>}

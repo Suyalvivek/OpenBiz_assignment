@@ -76,9 +76,26 @@ export const validateFields = async (data, step) => {
       }
     }
 
-    // Validate PAN Type
-    if (data.ddlPANType && !['Individual', 'Company', 'Firm', 'Others'].includes(data.ddlPANType)) {
-      errors.push('Invalid PAN Type');
+    // Validate Organisation Type
+    const validOrganisationTypes = [
+      'Proprietorship', 'Partnership', 'Hindu Undivided Family',
+      'Private Limited Company', 'Public Limited Company',
+      'Limited Liability Partnership', 'Cooperative Society',
+      'Society', 'Trust'
+    ];
+    
+    if (data.ddlOrganisationType && !validOrganisationTypes.includes(data.ddlOrganisationType)) {
+      errors.push('Invalid Organisation Type');
+    }
+
+    // Validate PAN Holder Name
+    if (!data.txtPANHolderName || data.txtPANHolderName.trim() === '') {
+      errors.push('PAN Holder Name is required');
+    }
+
+    // Validate DOB
+    if (!data.txtDOB || data.txtDOB.trim() === '') {
+      errors.push('Date of Birth is required');
     }
   }
 

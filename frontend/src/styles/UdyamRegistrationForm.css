@@ -185,10 +185,82 @@ select {
   font-size: 13px;
 }
 
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Form input improvements */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-input.error {
+  border-color: #dc3545;
+}
+
+/* Checkbox improvements */
+.checkbox-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-label {
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Required field indicator */
+.required {
+  color: #dc3545;
+  margin-left: 4px;
+}
+
+/* Error message improvements */
 .error-message {
   color: #dc3545;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 4px;
+  display: block;
 }
 
 /* ===== OTP ===== */

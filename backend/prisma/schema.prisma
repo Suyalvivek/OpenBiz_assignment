@@ -44,7 +44,9 @@ model UdyamSubmission {
   
   // Step 2: PAN Verification
   pan           String?   @db.VarChar(10)
-  panType       String?   @db.VarChar(50)  // e.g., 'Individual', 'Company', etc.
+  organisationType String? @db.VarChar(100)  // e.g., 'Proprietorship', 'Partnership', etc.
+  panHolderName String?   @db.VarChar(255)
+  panDOB        String?   @db.VarChar(20)    // Date of Birth as string
   panVerified   Boolean?  @default(false)
   
   // Contact Information

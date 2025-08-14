@@ -1,9 +1,8 @@
 // API service for Udyam Registration
 import type { ApiResponse } from '../types/types';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:7777/api/v1';
 
-// Request types
 interface AadhaarSubmitRequest {
   txtadharno: string;
   txtownername: string;
@@ -18,13 +17,25 @@ interface OTPVerifyRequest {
 
 interface PANSubmitRequest {
   txtPAN: string;
-  ddlPANType: string;
+  ddlOrganisationType: string;
+  txtPANHolderName: string;
+  txtDOB: string;
   submissionId: number | null;
 }
 
-// API functions
+interface FormFieldsResponse {
+  success: boolean;
+  fields?: any[];
+  error?: string;
+}
+
+interface ValidationRulesResponse {
+  success: boolean;
+  rules?: any;
+  error?: string;
+}
+
 export const udyamService = {
-  // Submit Aadhaar details (Step 1)
   submitAadhaar: async (data: AadhaarSubmitRequest): Promise<ApiResponse> => {
     try {
       const response = await fetch(`${API_BASE_URL}/submit/step1`, {
@@ -42,15 +53,15 @@ export const udyamService = {
       }
 
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred while submitting Aadhaar details';
       return {
         success: false,
-        error: error.message || 'An error occurred while submitting Aadhaar details',
+        error: errorMessage,
       };
     }
   },
 
-  // Verify OTP
   verifyOTP: async (data: OTPVerifyRequest): Promise<ApiResponse> => {
     try {
       const response = await fetch(`${API_BASE_URL}/submit/verify-otp`, {
@@ -68,15 +79,15 @@ export const udyamService = {
       }
 
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred while verifying OTP';
       return {
         success: false,
-        error: error.message || 'An error occurred while verifying OTP',
+        error: errorMessage,
       };
     }
   },
 
-  // Submit PAN details (Step 2)
   submitPAN: async (data: PANSubmitRequest): Promise<ApiResponse> => {
     try {
       const response = await fetch(`${API_BASE_URL}/submit/step2`, {
@@ -94,15 +105,15 @@ export const udyamService = {
       }
 
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred while submitting PAN details';
       return {
         success: false,
-        error: error.message || 'An error occurred while submitting PAN details',
+        error: errorMessage,
       };
     }
   },
 
-  // Get submission status
   getSubmissionStatus: async (submissionId: number): Promise<ApiResponse> => {
     try {
       const response = await fetch(`${API_BASE_URL}/submission/${submissionId}`, {
@@ -119,16 +130,16 @@ export const udyamService = {
       }
 
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred while getting submission status';
       return {
         success: false,
-        error: error.message || 'An error occurred while getting submission status',
+        error: errorMessage,
       };
     }
   },
 
-  // Get form fields for a specific step
-  getFormFields: async (step: number): Promise<any> => {
+  getFormFields: async (step: number): Promise<FormFieldsResponse> => {
     try {
       const response = await fetch(`${API_BASE_URL}/fields/${step}`, {
         method: 'GET',
@@ -144,16 +155,16 @@ export const udyamService = {
       }
 
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred while getting form fields';
       return {
         success: false,
-        error: error.message || 'An error occurred while getting form fields',
+        error: errorMessage,
       };
     }
   },
 
-  // Get validation rules
-  getValidationRules: async (): Promise<any> => {
+  getValidationRules: async (): Promise<ValidationRulesResponse> => {
     try {
       const response = await fetch(`${API_BASE_URL}/validation-rules`, {
         method: 'GET',
@@ -169,10 +180,11 @@ export const udyamService = {
       }
 
       return result;
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred while getting validation rules';
       return {
         success: false,
-        error: error.message || 'An error occurred while getting validation rules',
+        error: errorMessage,
       };
     }
   },

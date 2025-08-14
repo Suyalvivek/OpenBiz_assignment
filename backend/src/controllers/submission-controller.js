@@ -22,6 +22,7 @@ export const getSubmission = async (req, res) => {
  */
 export const processAadhaarVerification = async (req, res) => {
   try {
+    console.log('Request body:', req.body);
     const result = await processAadhaarVerificationService(req.body);
     if (!result.success) {
       return res.status(400).json(result);

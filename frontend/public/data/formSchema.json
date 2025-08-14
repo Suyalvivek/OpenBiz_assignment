@@ -1,0 +1,608 @@
+{
+  "fields": [
+    {
+      "name": "__EVENTTARGET",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "__EVENTARGUMENT",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "__VIEWSTATE",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "__VIEWSTATEGENERATOR",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "__VIEWSTATEENCRYPTED",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "__EVENTVALIDATION",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtadharno",
+      "label": "Aadhaar Number",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 12,
+      "placeholder": "Your Aadhaar No",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtownername",
+      "label": "Name of Entrepreneur",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 100,
+      "placeholder": "Name as per Aadhaar",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$chkDecarationA",
+      "label": "Declaration/Agreement",
+      "type": "checkbox",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$btnValidateAadhaar",
+      "label": "No label",
+      "type": "submit",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "checkbox",
+      "label": "No label",
+      "type": "checkbox",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 1,
+      "validator": ""
+    },
+    {
+      "name": "__EVENTTARGET",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "__EVENTARGUMENT",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "__VIEWSTATE",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "__VIEWSTATEGENERATOR",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "__VIEWSTATEENCRYPTED",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "__EVENTVALIDATION",
+      "label": "No label",
+      "type": "hidden",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtadharno",
+      "label": "Aadhaar Number",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 12,
+      "placeholder": "Your Aadhaar No",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$txtownername",
+      "label": "Name of Entrepreneur",
+      "type": "text",
+      "required": true,
+      "pattern": "",
+      "maxLength": 100,
+      "placeholder": "Name as per Aadhaar",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$chkDecarationA",
+      "label": "Declaration/Agreement",
+      "type": "checkbox",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "ctl00$ContentPlaceHolder1$btnValidateAadhaar",
+      "label": "No label",
+      "type": "submit",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    },
+    {
+      "name": "checkbox",
+      "label": "No label",
+      "type": "checkbox",
+      "required": false,
+      "pattern": "",
+      "maxLength": -1,
+      "placeholder": "",
+      "step": 2,
+      "validator": ""
+    }
+  ],
+  "uiElements": [
+    {
+      "selector": "#",
+      "text": "Button",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#ctl00_ContentPlaceHolder1_btnValidateAadhaar",
+      "text": "Validate & Generate OTP",
+      "type": "button",
+      "action": "function onclick(event) {\njavascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(\"ctl00$ContentPlaceHolder1$btnValidateAadhaar\", \"\", true, \"X\", \"\", false, false))\n}"
+    },
+    {
+      "selector": "#",
+      "text": "Button",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#speak",
+      "text": "Text To Speech",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-s9",
+      "text": "Bigger Text",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-s13",
+      "text": "Text Spacing",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-s12",
+      "text": "Line Height",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-s10",
+      "text": "Highlight Links",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-df",
+      "text": "Dyslexia Friendly",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-s11",
+      "text": "Hide Images",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-cursor",
+      "text": "Cursor",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#dark-btn",
+      "text": "Light-Dark",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#btn-invert",
+      "text": "Invert Colors",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#reset-all",
+      "text": "Reset All Settings",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#uw-widget-custom-trigger",
+      "text": "Accessibility Options",
+      "type": "button",
+      "action": "click"
+    },
+    {
+      "selector": "#ctl00_ContentPlaceHolder1_RequiredFieldValidator3",
+      "text": "Required",
+      "type": "error"
+    },
+    {
+      "selector": "#ctl00_ContentPlaceHolder1_RequiredFieldValidator10",
+      "text": "Required",
+      "type": "error"
+    },
+    {
+      "selector": "#ctl00_ContentPlaceHolder1_CustomValidator3",
+      "text": "You must Agree Declerations.",
+      "type": "error"
+    }
+  ],
+  "validationRules": {
+    "aadhaar": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$|^[2-9]{1}[0-9]{11}$",
+    "pan": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+    "mobile": "^[6-9]\\d{9}$",
+    "email": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    "pincode": "^[1-9][0-9]{5}$"
+  },
+  "steps": {
+    "step1": [
+      {
+        "name": "__EVENTTARGET",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "__EVENTARGUMENT",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "__VIEWSTATE",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "__VIEWSTATEGENERATOR",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "__VIEWSTATEENCRYPTED",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "__EVENTVALIDATION",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$txtadharno",
+        "label": "Aadhaar Number",
+        "type": "text",
+        "required": true,
+        "pattern": "",
+        "maxLength": 12,
+        "placeholder": "Your Aadhaar No",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$txtownername",
+        "label": "Name of Entrepreneur",
+        "type": "text",
+        "required": true,
+        "pattern": "",
+        "maxLength": 100,
+        "placeholder": "Name as per Aadhaar",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$chkDecarationA",
+        "label": "Declaration/Agreement",
+        "type": "checkbox",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$btnValidateAadhaar",
+        "label": "No label",
+        "type": "submit",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      },
+      {
+        "name": "checkbox",
+        "label": "No label",
+        "type": "checkbox",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 1,
+        "validator": ""
+      }
+    ],
+    "step2": [
+      {
+        "name": "__EVENTTARGET",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "__EVENTARGUMENT",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "__VIEWSTATE",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "__VIEWSTATEGENERATOR",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "__VIEWSTATEENCRYPTED",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "__EVENTVALIDATION",
+        "label": "No label",
+        "type": "hidden",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$txtadharno",
+        "label": "Aadhaar Number",
+        "type": "text",
+        "required": true,
+        "pattern": "",
+        "maxLength": 12,
+        "placeholder": "Your Aadhaar No",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$txtownername",
+        "label": "Name of Entrepreneur",
+        "type": "text",
+        "required": true,
+        "pattern": "",
+        "maxLength": 100,
+        "placeholder": "Name as per Aadhaar",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$chkDecarationA",
+        "label": "Declaration/Agreement",
+        "type": "checkbox",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "ctl00$ContentPlaceHolder1$btnValidateAadhaar",
+        "label": "No label",
+        "type": "submit",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      },
+      {
+        "name": "checkbox",
+        "label": "No label",
+        "type": "checkbox",
+        "required": false,
+        "pattern": "",
+        "maxLength": -1,
+        "placeholder": "",
+        "step": 2,
+        "validator": ""
+      }
+    ]
+  }
+}
